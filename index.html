@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Управленческий дашборд перехода на содержание территории силами МБУ Солнечногорска">
+  <title>Содержание территории силами МБУ</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">К основному содержанию</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Навигация по дашборду">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" role="img" aria-label="Солнечногорск, единая система содержания">
+          <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M9 29c7-1 9-7 15-7s8 6 15 7M14 34c5-1 6-5 10-5s5 4 10 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M24 8v7M12.7 12.7l5 5M35.3 12.7l-5 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <strong>Солнечногорск</strong>
+          <span>единый оператор содержания</span>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" role="tablist" aria-orientation="vertical">
+        <button class="nav-tab active" role="tab" aria-selected="true" data-section="overview">
+          <span>01</span> Обзор
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="territory">
+          <span>02</span> Территория
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="finance">
+          <span>03</span> Финансы
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="appeals">
+          <span>04</span> Обращения
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="people">
+          <span>05</span> Люди
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="equipment">
+          <span>06</span> Техника
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="control">
+          <span>07</span> Контроль
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="salt">
+          <span>08</span> Солевая станция
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="contracts">
+          <span>09</span> Контракты
+        </button>
+        <button class="nav-tab" role="tab" aria-selected="false" data-section="plans">
+          <span>10</span> План перехода
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a class="report-link" href="assets/analysis.pdf" download>
+          <span>PDF</span>
+          <div><strong>Скачать справку</strong><small>расчёты и источники</small></div>
+        </a>
+        <p>Данные на 07.09.2026</p>
+      </div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="mobile-brand">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 29c7-1 9-7 15-7s8 6 15 7M14 34c5-1 6-5 10-5s5 4 10 5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <strong>Содержание силами МБУ</strong>
+        </div>
+        <div class="topbar-meta">
+          <span class="live-dot"></span>
+          <span>Управленческий обзор</span>
+          <span class="divider"></span>
+          <time datetime="2026-09-07">7 сентября 2026</time>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Переключить тему" title="Переключить тему">
+            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+          </button>
+          <button class="menu-button" id="menuToggle" type="button" aria-label="Открыть разделы">Разделы</button>
+        </div>
+      </header>
+
+      <main id="workspace" class="workspace" tabindex="-1">
+        <section class="dashboard-section active" id="overview" role="tabpanel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Переход на собственные силы</span>
+              <h1>Один оператор. Одна система ответственности.</h1>
+              <p>МБУ объединяет содержание дорог, дворов и общественных территорий, концентрируя людей, технику и контроль в едином контуре.</p>
+            </div>
+            <div class="status-badge"><span></span> Зимний старт: 01.12.2026</div>
+          </div>
+
+          <div class="hero-grid">
+            <article class="hero-card primary">
+              <div class="hero-label">Собственными силами в 2026 году</div>
+              <div class="hero-value">1 000,5 <small>млн ₽</small></div>
+              <div class="hero-context">из общего финансирования 1 400,5 млн ₽</div>
+              <div class="progress"><span style="width:71.4%"></span></div>
+              <div class="hero-footer"><strong>+456,5 млн ₽</strong><span>к 2025 году</span></div>
+            </article>
+            <article class="hero-card">
+              <div class="hero-label">Укомплектованность штата</div>
+              <div class="hero-value">97,7<small>%</small></div>
+              <div class="hero-context">215 сотрудников при плане 220</div>
+              <div class="progress"><span style="width:97.7%"></span></div>
+              <div class="hero-footer"><strong>+22,9 п.п.</strong><span>с 2024 года</span></div>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Дорожная сеть</span>
+              <strong>946,5 <small>км</small></strong>
+              <span class="metric-delta positive">+8,8% к 2025</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Территории</span>
+              <strong>1,9 <small>млн м²</small></strong>
+              <span class="metric-note">дворы + общественные территории</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Обращения по дорогам</span>
+              <strong>3 334</strong>
+              <span class="metric-delta positive">−16,2% год к году</span>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">План лизинга</span>
+              <strong>949,3 <small>млн ₽</small></strong>
+              <span class="metric-note">поставка до 15 ноября</span>
+            </article>
+          </div>
+
+          <div class="overview-bottom">
+            <article class="panel chart-panel">
+              <div class="panel-heading">
+                <div><span class="panel-kicker">Финансовый масштаб</span><h2>Финансирование выросло почти вдвое</h2></div>
+                <span class="insight">+89,7% за 2024–2026</span>
+              </div>
+              <div class="chart-wrap medium"><canvas id="overviewFundingChart" aria-label="Финансирование по годам"></canvas></div>
+            </article>
+            <article class="panel decision-panel">
+              <span class="panel-kicker">Ключевой эффект</span>
+              <h2>Что даёт единый оператор</h2>
+              <ul class="benefit-list">
+                <li><span>01</span><div><strong>Единая ответственность</strong><small>понятный исполнитель по всей территории</small></div></li>
+                <li><span>02</span><div><strong>Гибкое перераспределение</strong><small>людей и техники между задачами</small></div></li>
+                <li><span>03</span><div><strong>Сквозной контроль</strong><small>маршрут, задача, исполнитель, результат</small></div></li>
+                <li><span>04</span><div><strong>Реинвестирование экономии</strong><small>в собственный парк и развитие МБУ</small></div></li>
+              </ul>
+            </article>
+          </div>
+          <div class="achievement-ribbon" aria-label="Главные результаты">
+            <div><span>Деньги в МБУ</span><strong>+1 000,5 млн ₽</strong><small>2026 к 2024</small></div>
+            <div><span>Укомплектованность</span><strong>+22,9 п.п.</strong><small>2026 к 2024</small></div>
+            <div><span>Средняя зарплата</span><strong>+11,7%</strong><small>2026 к 2024</small></div>
+            <div><span>Обращения по дворам</span><strong>−26,9%</strong><small>2026 к пику 2024</small></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="territory" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Масштаб ответственности</span><h1>Территория содержания</h1><p>Дороги учитываются по протяжённости, дворы и общественные территории объединены по площади.</p></div>
+          </div>
+          <div class="stat-strip">
+            <article><span>2024</span><strong>870,2 км</strong><small>дорог</small></article>
+            <article><span>2025</span><strong>870,2 км</strong><small>дорог</small></article>
+            <article class="accent"><span>2026</span><strong>946,5 км</strong><small>+76,3 км</small></article>
+            <article><span>2026</span><strong>1,9 млн м²</strong><small>дворы + общественные территории</small></article>
+          </div>
+          <div class="two-col">
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Динамика</span><h2>Протяжённость дорог</h2></div><span class="insight">+8,8%</span></div>
+              <div class="chart-wrap"><canvas id="roadsChart"></canvas></div>
+            </article>
+            <article class="panel">
+              <span class="panel-kicker">Расчётный норматив</span>
+              <h2>Ресурс на 946,5 км</h2>
+              <div class="norm-grid">
+                <div><strong>170</strong><span>работников</span><small>18 чел. на 100 км</small></div>
+                <div><strong>151</strong><span>единица техники</span><small>16 ед. на 100 км</small></div>
+              </div>
+            </article>
+          </div>
+          <article class="panel data-table-panel">
+            <div class="panel-heading"><div><span class="panel-kicker">Площадь территорий</span><h2>Дворы + общественные пространства</h2></div></div>
+            <div class="data-table">
+              <div class="table-row header"><span>Год</span><span>Площадь</span><span>Изменение</span></div>
+              <div class="table-row"><strong>2024</strong><span>2,0 млн м²</span><span>базовый год</span></div>
+              <div class="table-row"><strong>2025</strong><span>1,4 млн м²</span><span>−0,6 млн м²</span></div>
+              <div class="table-row"><strong>2026</strong><span>1,9 млн м²</span><span class="positive">+0,5 млн м²</span></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="dashboard-section" id="finance" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Финансовая модель</span><h1>Деньги остаются в системе МБУ</h1><p>Главный показатель — абсолютный объём работ, выполняемых собственными силами.</p></div>
+          </div>
+          <div class="stat-strip">
+            <article><span>2024</span><strong>738,4 млн ₽</strong><small>общий бюджет</small></article>
+            <article><span>2025</span><strong>1 129,6 млн ₽</strong><small>+53,0%</small></article>
+            <article class="accent"><span>2026</span><strong>1 400,5 млн ₽</strong><small>+24,0%</small></article>
+            <article class="dark"><span>Своими силами</span><strong>1 000,5 млн ₽</strong><small>в 2026 году</small></article>
+          </div>
+          <div class="two-col wide-left">
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">По направлениям</span><h2>Финансирование, млн ₽</h2></div></div>
+              <div class="chart-wrap tall"><canvas id="financeChart"></canvas></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Собственные силы</span><h2>Остаётся в МБУ</h2></div></div>
+              <div class="year-cards">
+                <div class="year-card"><span>2024</span><strong>0</strong><small>млн ₽</small></div>
+                <div class="year-card"><span>2025</span><strong>544,0</strong><small>млн ₽ · +544,0 к 2024</small></div>
+                <div class="year-card highlight"><span>2026</span><strong>1 000,5</strong><small>млн ₽ · +456,5 к 2025</small></div>
+              </div>
+              <div class="split-bar" aria-label="Структура собственных сил 2026">
+                <div style="width:69.7%"><span>Территории</span><strong>697,6</strong></div>
+                <div style="width:30.3%"><span>Дороги</span><strong>303,0</strong></div>
+              </div>
+              <div class="notice">В 2025 году весь дорожный бюджет 585,6 млн ₽ отторгован администрацией. В 2026 году подрядчикам по дорогам передано 400,0 млн ₽.</div>
+            </article>
+          </div>
+          <div class="change-ledger">
+            <div class="change-ledger-title"><span>Динамика финансирования</span><strong>Изменение год к году</strong></div>
+            <div><span>Территории</span><strong>2025 / 2024</strong><b>+55,6 млн ₽</b><small>+11,4%</small></div>
+            <div><span>Территории</span><strong>2026 / 2025</strong><b>+153,6 млн ₽</b><small>+28,2%</small></div>
+            <div><span>Дороги</span><strong>2025 / 2024</strong><b>+335,6 млн ₽</b><small>+134,3%</small></div>
+            <div><span>Дороги</span><strong>2026 / 2025</strong><b>+117,3 млн ₽</b><small>+20,0%</small></div>
+            <div class="total"><span>Всего</span><strong>2026 / 2024</strong><b>+662,1 млн ₽</b><small>+89,7%</small></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="appeals" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Обратная связь жителей</span><h1>Обращений становится меньше</h1><p>Сравнение выполнено за одинаковые периоды. Дворы, дороги и общественные территории показаны раздельно.</p></div>
+          </div>
+          <div class="three-col">
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Дворы</span><h2>7 465 обращений</h2></div><span class="insight">−20,8%</span></div>
+              <div class="chart-wrap"><canvas id="yardsAppealsChart"></canvas></div>
+              <p class="chart-caption">После роста в 2024 году показатель снижается два года подряд.</p>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Дороги</span><h2>3 334 обращения</h2></div><span class="insight">−16,2%</span></div>
+              <div class="chart-wrap"><canvas id="roadsAppealsChart"></canvas></div>
+              <p class="chart-caption">В 2026 году переломлена тенденция роста 2023–2025 годов.</p>
+            </article>
+            <article class="panel feature-panel">
+              <span class="panel-kicker">Общественные территории</span>
+              <div class="comparison">
+                <div><span>2025</span><strong>2 342</strong></div>
+                <div class="arrow">→</div>
+                <div><span>2026</span><strong>1 321</strong></div>
+              </div>
+              <div class="big-delta">−43,6%</div>
+              <p>На 1 021 обращение меньше за сопоставимый период.</p>
+            </article>
+          </div>
+          <div class="change-ledger appeals-ledger">
+            <div class="change-ledger-title"><span>Динамика обращений</span><strong>Абсолютно и в процентах</strong></div>
+            <div><span>Дворы</span><strong>2024 / 2023</strong><b class="negative">+609</b><small class="negative">+6,3%</small></div>
+            <div><span>Дворы</span><strong>2025 / 2024</strong><b>−783</b><small>−7,7%</small></div>
+            <div><span>Дворы</span><strong>2026 / 2025</strong><b>−1 962</b><small>−20,8%</small></div>
+            <div><span>Дороги</span><strong>2024 / 2023</strong><b class="negative">+415</b><small class="negative">+12,0%</small></div>
+            <div><span>Дороги</span><strong>2025 / 2024</strong><b class="negative">+104</b><small class="negative">+2,7%</small></div>
+            <div><span>Дороги</span><strong>2026 / 2025</strong><b>−646</b><small>−16,2%</small></div>
+            <div class="total"><span>Общественные территории</span><strong>2026 / 2025</strong><b>−1 021</b><small>−43,6%</small></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="people" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Команда МБУ</span><h1>Штат практически укомплектован</h1><p>Рост фактической численности поддержан последовательным увеличением заработной платы.</p></div>
+          </div>
+          <div class="stat-strip">
+            <article><span>2024</span><strong>128 / 171</strong><small>74,9%</small></article>
+            <article><span>2025</span><strong>150 / 167</strong><small>89,8%</small></article>
+            <article class="accent"><span>2026</span><strong>215 / 220</strong><small>97,7%</small></article>
+            <article class="dark"><span>Средневзвешенная ЗП</span><strong>87,6 тыс. ₽</strong><small>+11,7% к 2024</small></article>
+          </div>
+          <div class="two-col">
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Укомплектованность</span><h2>По категориям, %</h2></div></div>
+              <div class="chart-wrap tall"><canvas id="staffChart"></canvas></div>
+            </article>
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">На руки</span><h2>Заработная плата, тыс. ₽</h2></div></div>
+              <div class="chart-wrap tall"><canvas id="salaryChart"></canvas></div>
+            </article>
+          </div>
+          <div class="people-table">
+            <div><span>Зарплата</span><span>2024</span><span>2025 · рост</span><span>2026 · рост</span><span>Рост 24–26</span></div>
+            <div><strong>Рабочие</strong><span>71,5</span><span>74,2 · +3,8%</span><span>75,8 · +2,2%</span><span class="positive">+6,0%</span></div>
+            <div><strong>Водители</strong><span>82,3</span><span>86,5 · +5,1%</span><span>91,3 · +5,5%</span><span class="positive">+10,9%</span></div>
+            <div><strong>Трактористы</strong><span>91,5</span><span>102,8 · +12,3%</span><span>120,0 · +16,7%</span><span class="positive">+31,1%</span></div>
+            <div><strong>Средневзвешенная</strong><span>78,4</span><span>82,2 · +4,8%</span><span>87,6 · +6,5%</span><span class="positive">+11,7%</span></div>
+          </div>
+          <div class="change-ledger staff-ledger">
+            <div class="change-ledger-title"><span>Укомплектованность штата</span><strong>Рост в процентных пунктах</strong></div>
+            <div><span>Весь штат</span><strong>2025 / 2024</strong><b>+15,0 п.п.</b><small>74,9% → 89,8%</small></div>
+            <div><span>Весь штат</span><strong>2026 / 2025</strong><b>+7,9 п.п.</b><small>89,8% → 97,7%</small></div>
+            <div class="total"><span>Весь штат</span><strong>2026 / 2024</strong><b>+22,9 п.п.</b><small>128 → 215 сотрудников</small></div>
+            <div><span>Рабочие</span><strong>2026 / 2024</strong><b>+30,0 п.п.</b><small>68,5% → 98,5%</small></div>
+            <div><span>Водители</span><strong>2026 / 2024</strong><b>+6,1 п.п.</b><small>91,3% → 97,4%</small></div>
+            <div><span>Трактористы</span><strong>2026 / 2024</strong><b>+13,2 п.п.</b><small>82,5% → 95,7%</small></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="equipment" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Парк и развитие</span><h1>Техника: получено, эксплуатируется, закупается</h1><p>Госпрограмма и крупный лизинг показаны раздельно, чтобы не смешивать уже поставленную и планируемую технику.</p></div>
+          </div>
+          <div class="stat-strip">
+            <article><span>Баланс МБУ</span><strong>92 ед.</strong><small>без навесного оборудования</small></article>
+            <article class="accent"><span>Госпрограмма</span><strong>8 ед.</strong><small>85,6 млн ₽, уже получено</small></article>
+            <article class="dark"><span>Лизинг</span><strong>949,3 млн ₽</strong><small>5 лет, ≈192 млн ₽/год</small></article>
+            <article><span>Простой в ремонте</span><strong>≤ 2 дней</strong><small>среднее время</small></article>
+          </div>
+          <div class="equipment-grid">
+            <article class="panel">
+              <div class="panel-heading"><div><span class="panel-kicker">Уже получено</span><h2>8 единиц по госпрограмме</h2></div></div>
+              <div class="equipment-list compact-list">
+                <div><span class="qty">4</span><div><strong>МТЗ-82.1</strong><small>универсальные тракторы</small></div></div>
+                <div><span class="qty">2</span><div><strong>TLB 935</strong><small>экскаваторы-погрузчики</small></div></div>
+                <div><span class="qty">1</span><div><strong>Автогрейдер</strong><small>профилирование и расчистка</small></div></div>
+                <div><span class="qty">1</span><div><strong>Подметальная машина</strong><small>механизированная уборка</small></div></div>
+              </div>
+            </article>
+            <article class="panel span-two">
+              <div class="panel-heading"><div><span class="panel-kicker">Крупный лизинг</span><h2>Состав закупки</h2></div><span class="insight">поставка до 15.11</span></div>
+              <div class="leasing-grid">
+                <div><strong>22</strong><span>КДМ</span><small>комбинированные дорожные машины</small><b>629,4 млн ₽</b></div>
+                <div><strong>26</strong><span>Тракторные единицы</span><small>20 МТЗ + 6 погрузочно-уборочных машин</small><b>137,6 млн ₽</b></div>
+                <div><strong>2</strong><span>ВКМ-6500</span><small>вакуумные подметальные машины</small><b>104,4 млн ₽</b></div>
+                <div><strong>2</strong><span>ПУМ-15</span><small>подметально-уборочные машины</small><b>57,5 млн ₽</b></div>
+                <div><strong>1</strong><span>Лаповый погрузчик</span><small>погрузка снега</small><b>в составе лизинга</b></div>
+                <div><strong>12</strong><span>Комплектов навесного</span><small>поливомоечное и пескоразбрасывающее</small><b>20,4 млн ₽</b></div>
+              </div>
+              <div class="notice">Всего: 53 самоходные единицы и 12 комплектов навесного оборудования.</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="control" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Цифровой контур</span><h1>От обращения до результата — в одной системе</h1><p>Маршруты, техника, люди и задания объединяются в прозрачный цикл исполнения.</p></div>
+          </div>
+          <div class="control-hero">
+            <div>
+              <span class="eyebrow light">Исполнение линейных задач</span>
+              <strong>97,5%</strong>
+              <p>официальный показатель выполнения</p>
+            </div>
+            <div class="control-flow">
+              <div><span>01</span><strong>Обращение</strong><small>житель или диспетчер</small></div>
+              <i>→</i>
+              <div><span>02</span><strong>Задача</strong><small>маршрут и исполнитель</small></div>
+              <i>→</i>
+              <div><span>03</span><strong>Контроль</strong><small>геопозиция и статус</small></div>
+              <i>→</i>
+              <div><span>04</span><strong>Результат</strong><small>подтверждение выполнения</small></div>
+            </div>
+          </div>
+          <div class="systems-grid">
+            <article><strong>Яндекс Вектор</strong><span>маршруты, задания, сотрудники и техника</span></article>
+            <article><strong>РНИС</strong><span>региональный мониторинг транспорта</span></article>
+            <article><strong>ГЛОНАСС</strong><span>позиционирование и движение парка</span></article>
+            <article><strong>СКПДИ</strong><span>контроль дорожной инфраструктуры</span></article>
+            <article class="featured"><strong>Донецкие технологии</strong><span>обращение напрямую исполнителю, онлайн-контроль, единая очередь задач 24/7</span></article>
+          </div>
+          <div class="achievement-ribbon control-achievements">
+            <div><span>Объекты</span><strong>100%</strong><small>оцифровано</small></div>
+            <div><span>Маршруты</span><strong>100%</strong><small>оцифровано</small></div>
+            <div><span>Техника</span><strong>100%</strong><small>в цифровом контуре</small></div>
+            <div><span>Сотрудники</span><strong>100%</strong><small>в цифровом контуре</small></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="salt" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Зимнее содержание</span><h1>Станция жидких реагентов</h1><p>Новая технология повышает производительность обработки и снижает расход материала.</p></div>
+          </div>
+          <div class="salt-layout">
+            <article class="salt-hero">
+              <div class="salt-symbol">
+                <svg viewBox="0 0 120 160" aria-hidden="true"><path d="M25 8h70v25H25zM18 33h84l8 118H10z" fill="none" stroke="currentColor" stroke-width="6"/><path d="M23 92h74M28 118h64" stroke="currentColor" stroke-width="5"/><path d="M45 60c0-9 15-9 15-18 0 9 15 9 15 18a15 15 0 0 1-30 0z" fill="currentColor"/></svg>
+              </div>
+              <div><span>Введена в 2026 году</span><strong>Солевая колонна</strong><p>Приготовление и выдача жидкого противогололёдного материала без остановки технологического цикла.</p></div>
+            </article>
+            <article class="salt-metric"><span>Заявленная экономия</span><strong>&gt; 9 млн ₽</strong><small>в год</small></article>
+            <article class="salt-metric"><span>Расход соли</span><strong>до 4× ниже</strong><small>новая технология</small></article>
+            <article class="salt-metric"><span>Температурный режим</span><strong>−5 / −25 °C</strong><small>жидкий / смешанный метод</small></article>
+          </div>
+          <div class="benefit-grid">
+            <article><span>01</span><strong>Больше площадь за цикл</strong><p>одна машина обрабатывает большую территорию за выезд</p></article>
+            <article><span>02</span><strong>Универсальное навесное</strong><p>быстрое переключение сезонных операций</p></article>
+            <article><span>03</span><strong>Без погрузчика на выдаче</strong><p>сокращается время подготовки техники</p></article>
+            <article><span>04</span><strong>Чище дорожное полотно</strong><p>равномерное нанесение реагента</p></article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="contracts" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Подрядная модель</span><h1>Контракты и исполнители</h1><p>Контракты отнесены к году финансирования, даже если подписаны в конце предыдущего года.</p></div>
+          </div>
+          <div class="contract-timeline">
+            <article>
+              <div class="contract-year">2024</div>
+              <div class="contract-content">
+                <h2>Дороги: 27 контрактов</h2>
+                <div class="contract-kpis"><span><strong>4</strong> подрядчика</span><span><strong>183,4</strong> млн ₽</span><span><strong>4</strong> расторгнуто</span></div>
+                <p>Расторгнуты 3 контракта с «Грин Планет» и 1 с «Магнум» на общую цену 83,7 млн ₽.</p>
+              </div>
+            </article>
+            <article>
+              <div class="contract-year">2025</div>
+              <div class="contract-content">
+                <h2>Дороги: 585,6 млн ₽ полностью отторговано</h2>
+                <div class="contract-kpis"><span><strong>100%</strong> дорожного бюджета</span><span><strong>0</strong> в МБУ по дорогам</span></div>
+                <p>Закупки проводила администрация. Территории на сумму 544,0 млн ₽ содержались МБУ собственными силами.</p>
+              </div>
+            </article>
+            <article class="current">
+              <div class="contract-year">2026</div>
+              <div class="contract-content">
+                <h2>Дороги: 8 контрактов на 400,0 млн ₽</h2>
+                <div class="contract-kpis"><span><strong>2</strong> подрядчика</span><span><strong>6</strong> исполнено</span><span><strong>2</strong> в исполнении</span></div>
+                <p>«Горстройсервис»: 6 контрактов на 300,0 млн ₽. «Грин Планет»: 2 контракта на 100,0 млн ₽.</p>
+                <div class="notice">Контракты подписаны в ноябре 2025 года, но финансируются средствами 2026 года.</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="plans" role="tabpanel">
+          <div class="section-heading compact">
+            <div><span class="eyebrow">Финишный этап</span><h1>Переход к зимнему содержанию дорог</h1><p>Закупка техники и развёртывание единого оператора завершаются до начала зимнего сезона.</p></div>
+          </div>
+          <div class="roadmap">
+            <div class="roadmap-line"></div>
+            <article class="done"><span>Уже выполнено</span><strong>8 единиц техники</strong><p>получены по государственной программе</p></article>
+            <article class="active"><span>До 15 ноября</span><strong>Поставка по лизингу</strong><p>техника и навесное оборудование на 949,3 млн ₽</p></article>
+            <article><span>До 1 декабря</span><strong>Маршруты и экипажи</strong><p>закрепление техники, персонала и цифрового контроля</p></article>
+            <article class="finish"><span>С 1 декабря 2026</span><strong>Зимнее содержание силами МБУ</strong><p>дороги, дворы и общественные территории в едином контуре</p></article>
+          </div>
+          <div class="plan-bottom">
+            <article class="plan-number"><span>Целевой охват дорог</span><strong>92%</strong><small>собственными силами</small></article>
+            <article class="panel">
+              <span class="panel-kicker">Финансовый источник</span>
+              <h2>Экономия в рамках муниципального задания</h2>
+              <p class="lead-copy">Лизинг финансируется не за счёт новой субсидии, а за счёт высвобождаемого ресурса внутри действующего муниципального задания.</p>
+            </article>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="mobile-nav-backdrop" id="navBackdrop"></div>
+  <script src="app.js"></script>
+</body>
+</html>
