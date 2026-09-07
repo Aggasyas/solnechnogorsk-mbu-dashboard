@@ -159,6 +159,17 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
 .stat-strip article.accent { border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); background: var(--accent-soft); }
 .stat-strip article.dark { background: var(--nav); color: #fff; border-color: transparent; }
 .stat-strip article.dark > span, .stat-strip article.dark small { color: #8fa9b6; }
+.funding-growth { display: grid; grid-template-columns: 1.25fr 1fr auto 1fr auto 1fr; align-items: stretch; gap: 10px; margin-bottom: 16px; }
+.funding-growth-lead, .funding-step { border-radius: 15px; padding: 16px 18px; border: 1px solid var(--line); background: var(--surface); }
+.funding-growth-lead { background: var(--nav); color: #fff; }
+.funding-growth span, .funding-growth strong, .funding-growth small { display: block; }
+.funding-growth span { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; }
+.funding-growth-lead span, .funding-growth-lead small { color: #8fa8b5; }
+.funding-growth strong { font-size: 22px; margin-top: 9px; letter-spacing: -.03em; }
+.funding-growth-lead strong { color: #69d0d9; }
+.funding-growth small { color: var(--muted); font-size: 9px; margin-top: 3px; }
+.funding-growth i { align-self: center; color: var(--accent); font-style: normal; font-weight: 800; }
+.funding-step.current { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
 .norm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 20px; }
 .norm-grid > div { background: var(--surface-2); border-radius: 14px; padding: 20px; }
 .norm-grid strong, .norm-grid span, .norm-grid small { display: block; }
@@ -347,6 +358,9 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
   .systems-grid { grid-template-columns: repeat(3, 1fr); }
   .achievement-ribbon { grid-template-columns: repeat(2, 1fr); }
   .own-dynamics { grid-template-columns: repeat(2, 1fr); }
+  .funding-growth { grid-template-columns: 1fr 1fr 1fr; }
+  .funding-growth-lead { grid-column: span 3; }
+  .funding-growth i { display: none; }
   .change-ledger, .appeals-ledger, .staff-ledger { grid-template-columns: repeat(3, 1fr); }
   .change-ledger > div { border-top: 1px solid var(--line); }
   .change-ledger-title { grid-row: span 2; }
@@ -405,6 +419,8 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
   .topbar { height: 64px; }
   .achievement-ribbon { grid-template-columns: 1fr 1fr; }
   .own-dynamics { grid-template-columns: 1fr; }
+  .funding-growth { grid-template-columns: 1fr; }
+  .funding-growth-lead { grid-column: auto; }
   .change-ledger, .appeals-ledger, .staff-ledger { grid-template-columns: 1fr 1fr; }
   .change-ledger-title { grid-column: span 2; grid-row: auto; min-height: 88px !important; }
 }
