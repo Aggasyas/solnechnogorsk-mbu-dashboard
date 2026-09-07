@@ -188,6 +188,14 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
 .split-bar > div:last-child { background: var(--nav-2); }
 .split-bar span { font-size: 10px; opacity: .75; }
 .split-bar strong { font-size: 24px; }
+.own-dynamics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+.own-dynamics > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.own-dynamics span, .own-dynamics strong, .own-dynamics small { display: block; }
+.own-dynamics span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.own-dynamics strong { font-size: 20px; margin-top: 12px; letter-spacing: -.025em; }
+.own-dynamics small { color: var(--muted); font-size: 10px; margin-top: 3px; }
+.own-dynamics .accent { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.own-dynamics .accent strong { color: var(--positive); }
 .change-ledger { display: grid; grid-template-columns: 1.25fr repeat(5, 1fr); margin-top: 16px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
 .change-ledger > div { min-height: 112px; padding: 15px; border-left: 1px solid var(--line); display: flex; flex-direction: column; }
 .change-ledger > div:first-child { border-left: 0; }
@@ -330,6 +338,7 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
   .control-flow i { display: none; }
   .systems-grid { grid-template-columns: repeat(3, 1fr); }
   .achievement-ribbon { grid-template-columns: repeat(2, 1fr); }
+  .own-dynamics { grid-template-columns: repeat(2, 1fr); }
   .change-ledger, .appeals-ledger, .staff-ledger { grid-template-columns: repeat(3, 1fr); }
   .change-ledger > div { border-top: 1px solid var(--line); }
   .change-ledger-title { grid-row: span 2; }
@@ -386,6 +395,7 @@ h1 { margin-bottom: 10px; font-size: clamp(30px, 3vw, 46px); line-height: 1.04; 
   .source-note { align-items: flex-start; flex-direction: column; }
   .topbar { height: 64px; }
   .achievement-ribbon { grid-template-columns: 1fr 1fr; }
+  .own-dynamics { grid-template-columns: 1fr; }
   .change-ledger, .appeals-ledger, .staff-ledger { grid-template-columns: 1fr 1fr; }
   .change-ledger-title { grid-column: span 2; grid-row: auto; min-height: 88px !important; }
 }
